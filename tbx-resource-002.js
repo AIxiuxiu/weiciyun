@@ -80,29 +80,33 @@ charting.controller("resourceCtrl", ["$rootScope", "$scope", "$http", "$state", 
             if (e.data.error)
                 c.pop("error", "", "读取用户信息失败");
             else {
-                if (n.userinfo = angular.copy(e.data.object), n.userinfo.isLogin = !0, n.isEverLogin = e.data.object.isEverLogin, p.put("isEverLogin", n.isEverLogin), n.isNotEverLogin = !n.isEverLogin, n.userinfo.login = e.data.object.login, f.watch(), !n.isEverLogin) {
-                    n.userinfo.limit = {
-                        "chartbookcount": 300,
-                        "chartinstancecount": 300,
-                        "pagecount": 50,
-                        "iconcount": 490,
-                        "themecount": 20,
-                        "mediacapacity": 500,
-                        "ismorecharts": true,
-                        "ismoretheme": true,
-                        "isnowatermark": true,
-                        "isnologo": true,
-                        "ispptexport": true,
-                        "ishtmlexport": true,
-                        "ischartexport": true,
-                        "isnologoplay": true,
-                        "isnologoshare": true,
-                        "iscustomlogo": true,
-                        "isurlresource": true,
-                        "isimgexporthd": true,
-                        "isfullcharts": true
+                n.userinfo = angular.copy(e.data.object);
+                n.userinfo.vip.class = 6;
+                n.userinfo.limit = {
+                    "chartbookcount": 300,
+                    "chartinstancecount": 300,
+                    "pagecount": 50,
+                    "iconcount": 490,
+                    "themecount": 20,
+                    "mediacapacity": 500,
+                    "ismorecharts": true,
+                    "ismoretheme": true,
+                    "isnowatermark": true,
+                    "isnologo": true,
+                    "ispptexport": true,
+                    "ishtmlexport": true,
+                    "ischartexport": true,
+                    "isnologoplay": true,
+                    "isnologoshare": true,
+                    "iscustomlogo": true,
+                    "isurlresource": true,
+                    "isimgexporthd": true,
+                    "isfullcharts": true
 
-                    };
+                };
+
+                if (n.userinfo.isLogin = !0, n.isEverLogin = e.data.object.isEverLogin, p.put("isEverLogin", n.isEverLogin), n.isNotEverLogin = !n.isEverLogin, n.userinfo.login = e.data.object.login, f.watch(), !n.isEverLogin) {
+
                     var t = (new UAParser).getBrowser().name;
                     n.showBrowserTip = "Chrome" !== t && "Firefox" !== t,
                         n.showBrowserTip && s(function () {
